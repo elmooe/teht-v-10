@@ -13,3 +13,11 @@ X
 +src/main/java/kivipaperisakset/Valinta.java,2/3/2358e9da5f313a44dcef10645b451ab853e1f19d
 N
 src/test/java/PelaajaTest.java,8/f/8f2e81ca17204220d8f7b049603091bf8461c4e1
+S
+#src/test/java/test/PelaajaTest.java,2/d/2db31a1e9c475b0157f842a55af8756fd6b576b0
+X
+(src/test/java/test/PeliLogiikkaTest.java,4/6/4638264c91a0de163dc638e4257f2f95ec52df9d
+P
+ src/test/java/test/PeliTest.java,5/5/55d6856c9374eda4952428c85648f502530e4263
+S
+#src/test/java/test/ValintaTest.java,9/8/98fbf84c134278157c0798840a6c42c5d5b3817c

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fi"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Peli.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">1</a> &gt; <a href="index.source.html" class="el_package">kivipaperisakset</a> &gt; <span class="el_source">Peli.java</span></div><h1>Peli.java</h1><pre class="source lang-java linenums">package kivipaperisakset;
+
+/**
+ * Tämä luokka tarjoaa toiminnot kivi-paperi-sakset -pelin pelaamiseen kahden pelaajan välillä.
+ * Peli päättyy, kun jompikumpi pelaajista saavuttaa kolme voittoa.
+ */
+<span class="fc" id="L7">public class Peli {</span>
+
+    /**
+     * Käynnistää kivi-paperi-sakset -pelin kahdelle pelaajalle, jotka annetaan nimien perusteella.
+     * Luo kaksi Pelaaja-oliota nimillä ja käynnistää pelin.
+     *
+     * @param nimi1 Ensimmäisen pelaajan nimi.
+     * @param nimi2 Toisen pelaajan nimi.
+     */
+    public void kaynnistaPeli(String nimi1, String nimi2) {
+<span class="fc" id="L17">        Pelaaja p1 = new Pelaaja(nimi1);</span>
+<span class="fc" id="L18">        Pelaaja p2 = new Pelaaja(nimi2);</span>
+<span class="fc" id="L19">        pelaa(p1, p2);</span>
+<span class="fc" id="L20">    }</span>
+
+    /**
+     * Yksityinen metodi, joka suorittaa itse pelin logiikan. Peliä pelataan kunnes toinen pelaajista
+     * saavuttaa kolme voittoa. Pelin kulku tulostetaan konsoliin, mukaan lukien pelaajien nimet, valinnat,
+     * voittojen määrät ja tasapelit.
+     *
+     * @param p1 Ensimmäinen pelaaja, joka osallistuu peliin.
+     * @param p2 Toinen pelaaja, joka osallistuu peliin.
+     */
+    private void pelaa(Pelaaja p1, Pelaaja p2) {
+<span class="fc" id="L31">        boolean peliLoppui = false;</span>
+<span class="fc" id="L32">        int pelatutPelit = 0;</span>
+<span class="fc" id="L33">        int tasapelit = 0;</span>
+
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        while (!peliLoppui) {</span>
+<span class="fc" id="L36">            System.out.println(&quot;Erä &quot; + (pelatutPelit + 1) + &quot; =====================&quot;);</span>
+<span class="fc" id="L37">            System.out.println(p1.getNimi() + &quot;: &quot; + p1.arvoValinta() + &quot; (&quot; + p1.getVoitot() + &quot; voittoa)&quot;);</span>
+<span class="fc" id="L38">            System.out.println(p2.getNimi() + &quot;: &quot; + p2.arvoValinta() + &quot; (&quot; + p2.getVoitot() + &quot; voittoa)&quot;);</span>
+
+<span class="fc" id="L40">            int tulos = PeliLogiikka.tarkistaVoittaja(p1.arvoValinta(), p2.arvoValinta());</span>
+
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            if (tulos == 0) {</span>
+<span class="fc" id="L43">                tasapelit++;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">            } else if (tulos == 1) {</span>
+<span class="fc" id="L45">                p1.lisaaVoitto();</span>
+<span class="fc" id="L46">                System.out.println(&quot;\n&quot; + p1.getNimi() + &quot; voittaa!&quot;);</span>
+
+            } else {
+<span class="fc" id="L49">                p2.lisaaVoitto();</span>
+<span class="fc" id="L50">                System.out.println(p2.getNimi() + &quot; voittaa!&quot;);</span>
+
+            }
+
+<span class="fc" id="L54">            pelatutPelit++;</span>
+<span class="fc" id="L55">            System.out.println(&quot;Tasapelien lukumäärä: &quot; + tasapelit + &quot;\n&quot;);</span>
+
+<span class="pc bpc" id="L57" title="1 of 4 branches missed.">            if (p1.getVoitot() &gt;= 3 || p2.getVoitot() &gt;= 3) {</span>
+<span class="fc" id="L58">                peliLoppui = true;</span>
+<span class="fc" id="L59">                System.out.println(&quot;KOLME VOITTOA - PELI PÄÄTTYY&quot;);</span>
+<span class="fc" id="L60">                System.out.println(p1.getNimi() + &quot;: &quot; + p1.getVoitot() + &quot; voittoa, &quot; + p2.getNimi() + &quot;: &quot; + p2.getVoitot() + &quot; voittoa&quot;);</span>
+            }
+<span class="fc" id="L62">        }</span>
+<span class="fc" id="L63">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
