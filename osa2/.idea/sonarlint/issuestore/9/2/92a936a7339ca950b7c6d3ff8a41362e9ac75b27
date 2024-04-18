@@ -1,16 +1,0 @@
-
-?
-java:S2189""Add an end condition to this loop.(÷»â’8Áßæ‰ï1
-T
-java:S2589"7Remove this expression which always evaluates to "true"(÷»â’8Âßæ‰ï1
-k
-java:S1197"*Move the array designators [] to the type.(¡þÏÖøÿÿÿÿJ$da1f34e4-f05c-4de8-b5ca-19478c8339d9
-k	java:S106"+Replace this use of System.out by a logger.(îÔ’ŠüÿÿÿÿJ$dd624175-99bb-4ad0-b461-49f0ef8a2f5b
-L	java:S106"+Replace this use of System.out by a logger.(Í„ˆ¶ûÿÿÿÿ8Æßæ‰ï1
-G	java:S106"+Replace this use of System.out by a logger.(›‚á©8Çßæ‰ï1
-L	java:S106"+Replace this use of System.out by a logger.(›—‚Ûûÿÿÿÿ8Çßæ‰ï1
-L	java:S106"+Replace this use of System.out by a logger.(ÜÁ¢êúÿÿÿÿ8Èßæ‰ï1
-L	java:S106"+Replace this use of System.out by a logger.(•œÅÌýÿÿÿÿ8Éßæ‰ï1
-L	java:S106!"+Replace this use of System.out by a logger.(Ž„Ó˜ÿÿÿÿÿ8Êßæ‰ï1
-L	java:S106$"+Replace this use of System.out by a logger.(Ú…ö…üÿÿÿÿ8Êßæ‰ï1
-L	java:S106'"+Replace this use of System.out by a logger.(Ê‘÷¡þÿÿÿÿ8Êßæ‰ï1
