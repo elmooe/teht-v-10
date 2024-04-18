@@ -1,41 +1,29 @@
-
 package kivipaperisakset;
 
-/**
- *
- * @author Ira Dook
- */
 public class Pelaaja {
+    private String nimi;
+    private int voitot;
 
-    int voitot;      // Voittojen lukumäärä
-    int voitotYhteensä;
-
-    /**
-     * Valitse randomilla kivi, paperi tai sakset
-     */
-    public String pelaajanValinta() {
-        String valinta = "";
-        int c = (int) (Math.random() * 3);
-        switch (c) {
-            case 0:
-                valinta = ("kivi");
-                break;
-            case 1:
-                valinta = ("paperi");
-                break;
-            case 2:
-                valinta = ("sakset");
-                break;
-        }
-        return valinta;
+    public Pelaaja(String nimi) {
+        this.nimi = nimi;
+        this.voitot = 0;
     }
 
-    public int setVoitot() {
-        int voitotYhteensä = voitot++;
-        return voitotYhteensä;
+    public String pelaajanValinta() {
+        String[] valinnat = {"kivi", "paperi", "sakset"};
+        int c = (int) (Math.random() * 3);
+        return valinnat[c];
+    }
+
+    public void kasvataVoittoja() {
+        this.voitot++;
     }
 
     public int getVoitot() {
-        return (voitot);
+        return this.voitot;
+    }
+
+    public String getNimi() {
+        return this.nimi;
     }
 }
